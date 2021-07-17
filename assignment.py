@@ -7,19 +7,14 @@ Also, in case there is no element in the array I will be returning an empty arra
 
 We can not simply use list comprehension as in Python 3 a generator object is generated instead of list.
 
-So I went for the longer solution.
 """
 
 
 def missing_range(arr):
     missing_ele_arr = []
-    if len(arr) > 1:
-        for i in range(len(arr)-1):
-            if arr[i+1] > arr[i]+1:
-                for j in range(arr[i]+1, arr[i+1], 1):
-                    missing_ele_arr.append(j)
-    else:
-        missing_ele_arr = arr
+    for i in range(arr[0], arr[-1], 1):
+        if i not in arr:
+            missing_ele_arr.append(i)
     return missing_ele_arr
 
 
