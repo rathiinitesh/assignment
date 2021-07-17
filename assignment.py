@@ -5,16 +5,11 @@ some concerns. So, I will be returning the array as it is.
 
 Also, in case there is no element in the array I will be returning an empty array.
 
-We can not simply use list comprehension as in Python 3 a generator object is generated instead of list.
-
 """
 
 
 def missing_range(arr):
-    missing_ele_arr = []
-    for i in range(arr[0], arr[-1], 1):
-        if i not in arr:
-            missing_ele_arr.append(i)
+    missing_ele_arr = [i for i in range(arr[0], arr[-1], 1) if i not in arr]
     return missing_ele_arr
 
 
